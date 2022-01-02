@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <arm_neon.h>
+#include <stdint.h>
 
 #include "gf256_neon.h"
 
@@ -35,6 +36,10 @@ int main()
 
     res= double_elements(input);
     lookup();
+
+    uint8_t region1[1024];
+    uint8_t region2[1024];
+    xorr_neon_128(region1,region2,1024);
 
     return 0;
 }
