@@ -17,7 +17,7 @@ uint32x4_t double_elements(uint32x4_t input)
 
 int main()
 {
-    printf("Hello\n");
+    printf("Hello Neon\n");
 
     uint32x4_t input,res;
 
