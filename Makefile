@@ -5,7 +5,7 @@ _CFLAGS := $(CFLAGS) -O2 -mfpu=neon -march=armv7-a -marm
 all: hello_neon
 
 
-hello_neon: hello_neon.c
+hello_neon: hello_neon.c fec.c
 	$(CC) $(_CFLAGS) -o hello_neon hello_neon.c
 
 clean:

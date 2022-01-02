@@ -8,6 +8,7 @@
 
 #include "gf256_neon.h"
 
+#include "fec.h"
 
 
 uint32x4_t double_elements(uint32x4_t input)
@@ -40,6 +41,9 @@ int main()
     uint8_t region1[1024];
     uint8_t region2[1024];
     xorr_neon_128(region1,region2,1024);
+
+
+    test_gf();
 
     return 0;
 }
