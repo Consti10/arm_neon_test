@@ -49,7 +49,6 @@
 #include <assert.h>
 #include "fec.h"
 //Consti10
-#include "c_linalg.h"
 #include "galoiFields_reference.h"
 
 #define CONSTI10_N_UNROLLS 16
