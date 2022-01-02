@@ -1018,16 +1018,18 @@ test_gf()
         }
     }
 
+    static const int SIZE_X=128;
+
     for(i=0;i<GF_SIZE;i++){
-        gf src[1024];
-        gf res1[1024];
-        gf res2[1024];
+        gf src[SIZE_X];
+        gf res1[SIZE_X];
+        gf res2[SIZE_X];
         // do it with the lookup table original impl
-        mul(res1,src,i,1024);
+        mul(res1,src,i,SIZE_X);
         // then do it with the NEON implementation
-        maddrc256_imul_neon_128(res2,src,i,1024);
+        maddrc256_imul_neon_128(res2,src,i,SIZE_X);
         //
-        for(int k=0;k<1024;k++){
+        for(int k=0;k<SIZE_X;k++){
             if(res1[k]!=res2[k]){
                 fprintf(stderr,"No match %d %d\n",res1[k],res2[k]);
             }
