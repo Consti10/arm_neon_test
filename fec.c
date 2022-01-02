@@ -1027,7 +1027,7 @@ test_gf()
         // do it with the lookup table original impl
         mul(res1,src,i,SIZE_X);
         // then do it with the NEON implementation
-        maddrc256_imul_neon_128(res2,src,i,SIZE_X);
+        maddrc256_imul_neon_128(res2,src,i,SIZE_X,gf_mul_table);
         //
         for(int k=0;k<SIZE_X;k++){
             if(res1[k]!=res2[k]){

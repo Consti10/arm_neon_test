@@ -38,10 +38,12 @@ xorr_neon_128(uint8_t *region1, const uint8_t *region2, size_t length)
 
 void
 maddrc256_imul_neon_128(uint8_t *region1, const uint8_t *region2,
-                        uint8_t constant, size_t length)
+                        uint8_t constant, size_t length,uint8_t* table)
 {
     uint8_t *end;
-    const uint8_t *p = pt[constant];
+    //const uint8_t *p = pt[constant];
+    const uint8_t *p = table;
+
     register uint8x16_t mi[8], sp[8], ri[8], reg1, reg2;
 
     if (constant == 0)
