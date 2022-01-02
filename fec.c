@@ -1004,7 +1004,8 @@ test_gf()
     for(i=0;i<GF_SIZE;i++){
         for(int j=0;j<GF_SIZE;j++){
             gf res;
-            mul(&res,&i,j,1);
+            //mul(&res,&i,j,1);
+            maddrc256_imul_neon_128(&res,&i,j,1);
             assert(res==gal_mul(i,j));
         }
     }
