@@ -1019,10 +1019,13 @@ test_gf()
     }
 
     for(i=0;i<GF_SIZE;i++){
-        for(int j=0;j<GF_SIZE;j++){
-            gf buffer[1024];
-            gf buffer2[1024];
-            addmul(buffer1,buffer2,i,1024);
+        gf src[1024];
+        gf res1[1024];
+        gf res2[1024];
+        mul(res1,src,i,1024);
+        //
+        for(int k=0;k<1024;k++){
+            assert(res1[k]==res2[k]);
         }
     }
 }
