@@ -1028,6 +1028,9 @@ test_gf()
         maddrc256_imul_neon_128(res2,src,i,1024);
         //
         for(int k=0;k<1024;k++){
+            if(res1[k]==res2[k]){
+                fprintf(stderr,"No match %d %d",res1[k],res2[k]);
+            }
             assert(res1[k]==res2[k]);
         }
     }
