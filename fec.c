@@ -1022,7 +1022,10 @@ test_gf()
         gf src[1024];
         gf res1[1024];
         gf res2[1024];
+        // do it with the lookup table original impl
         mul(res1,src,i,1024);
+        // then do it with the NEON implementation
+        maddrc256_imul_neon_128(res2,src,i,1024);
         //
         for(int k=0;k<1024;k++){
             assert(res1[k]==res2[k]);
