@@ -1,6 +1,6 @@
 # Test on rpi
 
-_CFLAGS := $(CFLAGS) -O2 #-mfpu=neon -march=armv7-a -marm
+_CFLAGS := $(CFLAGS) -O2 -mfpu=neon -march=armv7-a -marm
 
 all: hello_neon
 
