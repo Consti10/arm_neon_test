@@ -1029,7 +1029,7 @@ test_gf()
         //
         for(int k=0;k<1024;k++){
             if(res1[k]!=res2[k]){
-                fprintf(stderr,"No match %d %d",res1[k],res2[k]);
+                fprintf(stderr,"No match %d %d\n",res1[k],res2[k]);
             }
         }
     }
